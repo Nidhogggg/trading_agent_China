@@ -99,6 +99,11 @@ export DEEPSEEK_API_KEY=$YOUR_DEEPSEEK_API_KEY
 export OPENAI_API_KEY=$YOUR_OPENAI_API_KEY
 ```
 
+```bash
+# 向量模型 API，国内推荐使用火山引擎
+export VOLCES_API_KEY=$YOUR_VOLCES_API_KEY
+```
+
 对于国际市场数据，您还需要 FinnHub API（免费版即可）：
 ```bash
 export FINNHUB_API_KEY=$YOUR_FINNHUB_API_KEY

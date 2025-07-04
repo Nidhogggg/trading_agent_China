@@ -1,0 +1,397 @@
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 600886
+Trade date: 2025-06-26
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 600886
+Trade date: 2025-06-26
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 600886
+Trade date: 2025-06-26
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+Received chunk with 1 messages
+Received chunk with 2 messages
+Received chunk with 3 messages
+Received chunk with 4 messages
+Received chunk with 5 messages
+Received chunk with 6 messages
+Received chunk with 7 messages
+Received chunk with 8 messages
+Received chunk with 11 messages
+Received chunk with 12 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 600886
+Trade date: 2025-06-27
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+Received chunk with 1 messages
+Received chunk with 2 messages
+Received chunk with 3 messages
+Received chunk with 4 messages
+Received chunk with 5 messages
+Received chunk with 6 messages
+Received chunk with 7 messages
+Received chunk with 8 messages
+Received chunk with 9 messages
+Received chunk with 10 messages
+Received chunk with 11 messages
+Received chunk with 12 messages
+Received chunk with 13 messages
+Received chunk with 14 messages
+Received chunk with 15 messages
+Received chunk with 16 messages
+Received chunk with 17 messages
+Received chunk with 18 messages
+Received chunk with 19 messages
+Received chunk with 20 messages
+Received chunk with 21 messages
+Received chunk with 22 messages
+Received chunk with 23 messages
+Received chunk with 24 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Trace completed
+Storing current state for reflection...
+Logging final state...
+Starting web report generation...
+Web report generation completed
+Processing final signal...
+Propagate method completed
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 600886
+Trade date: 2025-06-27
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+Received chunk with 1 messages
+Received chunk with 2 messages
+Received chunk with 3 messages
+Received chunk with 4 messages
+Received chunk with 5 messages
+Received chunk with 6 messages
+Received chunk with 7 messages
+Received chunk with 8 messages
+Received chunk with 9 messages
+Received chunk with 10 messages
+Received chunk with 11 messages
+Received chunk with 12 messages
+Received chunk with 13 messages
+Received chunk with 14 messages
+Received chunk with 15 messages
+Received chunk with 16 messages
+Received chunk with 17 messages
+Received chunk with 18 messages
+Received chunk with 19 messages
+Received chunk with 20 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Trace completed
+Storing current state for reflection...
+Logging final state...
+Starting web report generation...
+Web report generation completed
+Processing final signal...
+Propagate method completed
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 600886
+Trade date: 2025-06-27
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+Received chunk with 1 messages
+Received chunk with 2 messages
+Received chunk with 3 messages
+Received chunk with 4 messages
+Received chunk with 5 messages
+Received chunk with 6 messages
+Received chunk with 7 messages
+Received chunk with 8 messages
+Received chunk with 9 messages
+Received chunk with 10 messages
+Received chunk with 11 messages
+Received chunk with 12 messages
+Received chunk with 13 messages
+Received chunk with 14 messages
+Received chunk with 15 messages
+Received chunk with 16 messages
+Received chunk with 17 messages
+Received chunk with 18 messages
+Received chunk with 19 messages
+Received chunk with 20 messages
+Received chunk with 21 messages
+Received chunk with 22 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Trace completed
+Storing current state for reflection...
+Logging final state...
+Starting web report generation...
+Web report generation completed
+Processing final signal...
+Propagate method completed
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 002714
+Trade date: 2025-06-27
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+Received chunk with 1 messages
+Received chunk with 2 messages
+Received chunk with 3 messages
+Received chunk with 4 messages
+Received chunk with 5 messages
+Received chunk with 6 messages
+Received chunk with 7 messages
+Received chunk with 8 messages
+Received chunk with 12 messages
+Received chunk with 13 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Trace completed
+Storing current state for reflection...
+Logging final state...
+Starting web report generation...
+Web report generation completed
+Processing final signal...
+Propagate method completed
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 002714
+Trade date: 2025-06-28
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+Received chunk with 1 messages
+Received chunk with 2 messages
+Received chunk with 3 messages
+Received chunk with 4 messages
+Received chunk with 13 messages
+Received chunk with 14 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Trace completed
+Storing current state for reflection...
+Logging final state...
+Starting web report generation...
+Web report generation completed
+Processing final signal...
+Propagate method completed
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 002714
+Trade date: 2025-06-28
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+Received chunk with 1 messages
+Received chunk with 2 messages
+Received chunk with 3 messages
+Received chunk with 4 messages
+Received chunk with 5 messages
+Received chunk with 6 messages
+Received chunk with 11 messages
+Received chunk with 12 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Trace completed
+Storing current state for reflection...
+Logging final state...
+Starting web report generation...
+Web report generation completed
+Processing final signal...
+Propagate method completed
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 600126
+Trade date: 2025-06-28
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+Received chunk with 1 messages
+Received chunk with 2 messages
+Received chunk with 3 messages
+Received chunk with 4 messages
+Received chunk with 5 messages
+Received chunk with 6 messages
+Received chunk with 14 messages
+Received chunk with 15 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Trace completed
+Storing current state for reflection...
+Logging final state...
+Starting web report generation...
+Web report generation completed
+Processing final signal...
+Propagate method completed
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 300274
+Trade date: 2025-06-29
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+Received chunk with 1 messages
+Received chunk with 2 messages
+Received chunk with 3 messages
+Received chunk with 4 messages
+Received chunk with 5 messages
+Received chunk with 6 messages
+Received chunk with 7 messages
+Received chunk with 8 messages
+Received chunk with 9 messages
+Received chunk with 10 messages
+Received chunk with 11 messages
+Received chunk with 12 messages
+Received chunk with 13 messages
+Received chunk with 14 messages
+Received chunk with 15 messages
+Received chunk with 16 messages
+Received chunk with 17 messages
+Received chunk with 18 messages
+Received chunk with 19 messages
+Received chunk with 20 messages
+Received chunk with 21 messages
+Received chunk with 22 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Trace completed
+Storing current state for reflection...
+Logging final state...
+Starting web report generation...
+Web report generation completed
+Processing final signal...
+Propagate method completed
+
+=== Starting propagate ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\propagate_debug.txt
+Company name: 300251
+Trade date: 2025-06-29
+Creating initial state...
+Initial state created
+Initial state keys: messages, company_of_interest, trade_date, investment_debate_state, risk_debate_state, market_report, fundamentals_report, sentiment_report, news_report, investment_plan, trader_investment_plan, final_trade_decision
+Running in debug mode with tracing...
+Received chunk with 1 messages
+Received chunk with 2 messages
+Received chunk with 3 messages
+Received chunk with 4 messages
+Received chunk with 5 messages
+Received chunk with 6 messages
+Received chunk with 7 messages
+Received chunk with 8 messages
+Received chunk with 13 messages
+Received chunk with 14 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Received chunk with 1 messages
+Trace completed
+Storing current state for reflection...
+Logging final state...
+Starting web report generation...
+Web report generation completed
+Processing final signal...
+Propagate method completed

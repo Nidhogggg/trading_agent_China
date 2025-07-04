@@ -1,0 +1,381 @@
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-27
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Report dir from config: D:\project\quant\TradingAgents
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 600886
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_600886_2025-06-27.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-27
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 600886
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_600886_2025-06-27.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-27
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 600886
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_600886_2025-06-27.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-27
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 002714
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_002714_2025-06-27.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-28
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 002714
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_002714_2025-06-28.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-28
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 002714
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_002714_2025-06-28.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-28
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 600126
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_600126_2025-06-28.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-29
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 300274
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_300274_2025-06-29.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-29
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 300251
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_300251_2025-06-29.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-29
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 600570
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_600570_2025-06-29.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: .\report_debug.txt
+trade_date: 2025-06-29
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: .\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 002142
+Failed to render template: Object of type Undefined is not JSON serializable
+Error in report generation: Object of type Undefined is not JSON serializable
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: .\report_debug.txt
+trade_date: 2025-06-29
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: .\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 002142
+Failed to render template: Object of type Undefined is not JSON serializable
+Error in report generation: Object of type Undefined is not JSON serializable
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-29
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 002142
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_002142_2025-06-29.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-29
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 600126
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_600126_2025-06-29.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-06-30
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 601728
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_601728_2025-06-30.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-07-01
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 600886
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_600886_2025-07-01.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-07-01
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 605499
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_605499_2025-07-01.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-07-01
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 600770
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_600770_2025-07-01.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-07-01
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 002149
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_002149_2025-07-01.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-07-01
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 605155
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_605155_2025-07-01.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-07-01
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 000651
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_000651_2025-07-01.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-07-02
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 600886
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_600886_2025-07-02.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-07-03
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 300645
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_300645_2025-07-03.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
+
+=== Starting _generate_web_report ===
+Current working directory: D:\project\quant\TradingAgents
+Debug file location: D:\project\quant\TradingAgents\report_debug.txt
+trade_date: 2025-07-03
+State keys: messages, company_of_interest, trade_date, sender, market_report, sentiment_report, news_report, fundamentals_report, investment_debate_state, investment_plan, trader_investment_plan, risk_debate_state, final_trade_decision
+Reports directory path: D:\project\quant\TradingAgents\reports
+Template directory path: D:\project\quant\TradingAgents\templates
+Successfully loaded template
+Market type: CN
+All required fields present
+Prepared report data for company: 601138
+Successfully rendered HTML template
+Saving report to: D:\project\quant\TradingAgents\reports\report_601138_2025-07-03.html
+Successfully saved report file
+Debug mode enabled, skipping browser opening
