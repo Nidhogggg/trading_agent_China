@@ -361,7 +361,7 @@ def main():
             col1, col2 = st.columns(2)
             
             with col1:
-                ticker = st.text_input("Ticker Symbol", value="SPY")
+                ticker = st.text_input("Ticker Symbol", value="000001")
                 analysis_date = st.date_input(
                     "Analysis Date",
                     value=datetime.datetime.now().date(),

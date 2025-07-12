@@ -135,9 +135,14 @@ Select indicators that provide diverse and complementary information. Avoid redu
 
         result = chain.invoke(state["messages"])
 
+        report = ""
+
+        if len(result.tool_calls) == 0:
+            report = result.content
+       
         return {
             "messages": [result],
-            "market_report": result.content,
+            "market_report": report,
         }
 
     return market_analyst_node

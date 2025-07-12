@@ -106,11 +106,17 @@ def create_fundamentals_analyst(llm, toolkit):
         prompt = prompt.partial(ticker=ticker)
 
         chain = prompt | llm.bind_tools(tools)
+
         result = chain.invoke(state["messages"])
+
+        report = ""
+
+        if len(result.tool_calls) == 0:
+            report = result.content
 
         return {
             "messages": [result],
-            "fundamentals_report": result.content,
+            "fundamentals_report": report,
         }
 
     return fundamentals_analyst_node

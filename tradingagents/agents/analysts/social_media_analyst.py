@@ -86,11 +86,17 @@ def create_social_media_analyst(llm, toolkit):
         prompt = prompt.partial(ticker=ticker)
 
         chain = prompt | llm.bind_tools(tools)
+
         result = chain.invoke(state["messages"])
+
+        report = ""
+
+        if len(result.tool_calls) == 0:
+            report = result.content
 
         return {
             "messages": [result],
-            "sentiment_report": result.content,
+            "sentiment_report": report,
         }
 
     return social_media_analyst_node

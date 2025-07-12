@@ -764,7 +764,7 @@ def get_YFin_data_window(
 def get_YFin_data_online(
     symbol: Annotated[str, "ticker symbol of the company"],
     start_date: Annotated[str, "Start date in yyyy-mm-dd format"],
-    end_date: Annotated[str, "Start date in yyyy-mm-dd format"],
+    end_date: Annotated[str, "End date in yyyy-mm-dd format"],
 ):
 
     datetime.strptime(start_date, "%Y-%m-%d")
@@ -806,7 +806,7 @@ def get_YFin_data_online(
 def get_YFin_data(
     symbol: Annotated[str, "ticker symbol of the company"],
     start_date: Annotated[str, "Start date in yyyy-mm-dd format"],
-    end_date: Annotated[str, "Start date in yyyy-mm-dd format"],
+    end_date: Annotated[str, "End date in yyyy-mm-dd format"],
 ) -> str:
     # read in data
     data = pd.read_csv(
