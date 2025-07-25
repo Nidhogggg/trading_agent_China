@@ -19,15 +19,15 @@ def create_msg_delete():
     def delete_messages(state):
         """Clear messages and add placeholder for Anthropic compatibility"""
         messages = state["messages"]
-        
+
         # Remove all messages
         removal_operations = [RemoveMessage(id=m.id) for m in messages]
-        
+
         # Add a minimal placeholder message
         placeholder = HumanMessage(content="Continue")
-        
+
         return {"messages": removal_operations + [placeholder]}
-    
+
     return delete_messages
 
 
@@ -60,7 +60,7 @@ class Toolkit:
         Returns:
             str: A formatted dataframe containing the latest global news from Reddit in the specified time frame.
         """
-        
+
         global_news_result = interface.get_reddit_global_news(curr_date, 7, 5)
 
         return global_news_result
@@ -478,7 +478,7 @@ class Toolkit:
         curr_date: Annotated[str, "当前日期，格式为 yyyy-mm-dd"],
     ) -> str:
         """获取 A 股市场财务分析数据，包括主要财务指标、杜邦分析等
-        
+
         返回的数据包括：
         1. 盈利能力分析：每股收益、ROE、ROA等
         2. 运营效率分析：毛利率、营业利润率等
@@ -526,13 +526,13 @@ class Toolkit:
         industry: Annotated[str, "行业名称"] = None,
     ) -> str:
         """获取 A 股特有市场数据，包括：
-        
+
         1. 龙虎榜数据：大资金流向和主力资金动向
         2. 大宗交易：机构投资者的交易行为
         3. 融资融券：市场杠杆使用情况
         4. 北向资金：外资持仓变化趋势
         5. 行业分析：如果提供了行业名称，则包含行业分析数据
-        
+
         Args:
             symbol: 股票代码
             curr_date: 当前日期，格式为 yyyy-mm-dd

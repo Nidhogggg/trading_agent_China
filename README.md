@@ -92,11 +92,10 @@ pip install -r requirements.txt
 
 ### 必需的 API
 
-您需要 OpenAI API 或 DeepSeek API 来运行智能体。我们推荐使用 DeepSeek 模型，它在金融领域表现出色且支持中英双语：
+您需要 OpenAI API 或 QWEN API 来运行智能体。我们推荐使用 QWEN 模型，它在金融领域表现出色且支持中英双语：
 ```bash
-export DEEPSEEK_API_KEY=$YOUR_DEEPSEEK_API_KEY
-# 或者使用 OpenAI API
-export OPENAI_API_KEY=$YOUR_OPENAI_API_KEY
+# 使用 Qwen API
+export QWEN_API_KEY=$YOUR_QWEN_API_KEY
 ```
 
 ```bash
@@ -179,8 +178,8 @@ from tradingagents.default_config import DEFAULT_CONFIG
 
 # 创建自定义配置
 config = DEFAULT_CONFIG.copy()
-config["deep_think_llm"] = "deepseek-reasoner"  # 使用 DeepSeek-R1 作为深度思考模型
-config["quick_think_llm"] = "deepseek-chat"  # 使用 DeepSeek-V3 作为快速思考模型
+config["deep_think_llm"] = "qwen-plus"  # 使用 DeepSeek-R1 作为深度思考模型
+config["quick_think_llm"] = "qwen-plus"  # 使用 DeepSeek-V3 作为快速思考模型
 config["max_debate_rounds"] = 2  # 增加辩论轮数
 config["online_tools"] = True  # 使用在线工具或缓存数据
 
@@ -204,12 +203,12 @@ Please reference our work if you find *TradingAgents* provides you with some hel
 
 ```
 @misc{xiao2025tradingagentsmultiagentsllmfinancial,
-      title={TradingAgents: Multi-Agents LLM Financial Trading Framework}, 
+      title={TradingAgents: Multi-Agents LLM Financial Trading Framework},
       author={Yijia Xiao and Edward Sun and Di Luo and Wei Wang},
       year={2025},
       eprint={2412.20138},
       archivePrefix={arXiv},
       primaryClass={q-fin.TR},
-      url={https://arxiv.org/abs/2412.20138}, 
+      url={https://arxiv.org/abs/2412.20138},
 }
 ```

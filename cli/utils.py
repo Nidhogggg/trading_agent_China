@@ -127,6 +127,7 @@ def select_shallow_thinking_agent() -> str:
 
     # Define shallow thinking llm engine options with their corresponding model names
     SHALLOW_AGENT_OPTIONS = [
+        ("Qwen3 - 专业推理模型（紧凑版）", "qwen-plus"),
         ("DeepSeek-V3 - 专业推理模型（紧凑版）", "deepseek-chat"),
         ("DeepSeek-R1 - 完整版高级推理模型", "deepseek-reasoner"),
         ("GPT-4o-mini - 快速高效，适合简单任务", "gpt-4o-mini"),
@@ -165,6 +166,7 @@ def select_deep_thinking_agent() -> str:
 
     # Define deep thinking llm engine options with their corresponding model names
     DEEP_AGENT_OPTIONS = [
+        ("Qwen3 - 专业推理模型（紧凑版）", "qwen-plus"),
         ("DeepSeek-V3 - 专业推理模型（紧凑版）", "deepseek-chat"),
         ("DeepSeek-R1 - 完整版高级推理模型", "deepseek-reasoner"),
         ("GPT-4.1-nano - 超轻量级模型，适合基础操作", "gpt-4.1-nano"),

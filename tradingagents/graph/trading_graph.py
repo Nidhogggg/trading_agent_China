@@ -62,8 +62,8 @@ class TradingAgentsGraph:
         )
 
         # 配置 Deepseek API 基础 URL 和 API Key
-        base_url = self.config.get("deepseek_base_url", "https://api.deepseek.com/v1")
-        api_key = self.config.get("deepseek_api_key", os.getenv("DEEPSEEK_API_KEY"))
+        base_url = self.config.get("deepseek_base_url", "https://dashscope.aliyuncs.com/compatible-mode/v1")
+        api_key = self.config.get("deepseek_api_key", os.getenv("QWEN_API_KEY"))
 
         # Initialize LLMs with Deepseek configuration
         self.deep_thinking_llm = ChatOpenAI(
@@ -119,7 +119,7 @@ class TradingAgentsGraph:
     def _create_tool_nodes(self) -> Dict[str, ToolNode]:
         """Create tool nodes for different data sources."""
         market_type = get_market_type()
-        
+
         if market_type == "CN":
             # A股市场工具配置
             return {
@@ -211,24 +211,24 @@ class TradingAgentsGraph:
         """Run the trading agents graph for a company on a specific date."""
         # 使用绝对路径创建调试文件
         debug_file = os.path.join(self.config["project_dir"], 'propagate_debug.txt')
-        
+
         with open(debug_file, "a", encoding='utf-8') as f:
             f.write("\n=== Starting propagate ===\n")
             f.write(f"Current working directory: {os.getcwd()}\n")
             f.write(f"Debug file location: {debug_file}\n")
             f.write(f"Company name: {company_name}\n")
             f.write(f"Trade date: {trade_date}\n")
-        
+
         self.ticker = company_name
 
         # Initialize state
         with open(debug_file, "a", encoding='utf-8') as f:
             f.write("Creating initial state...\n")
-            
+
         init_agent_state = self.propagator.create_initial_state(
             company_name, trade_date
         )
-        
+
         with open(debug_file, "a", encoding='utf-8') as f:
             f.write("Initial state created\n")
             f.write(f"Initial state keys: {', '.join(init_agent_state.keys())}\n")
@@ -240,7 +240,7 @@ class TradingAgentsGraph:
             # Debug mode with tracing
             with open(debug_file, "a", encoding='utf-8') as f:
                 f.write("Running in debug mode with tracing...\n")
-                
+
             trace = []
             for chunk in self.graph.stream(init_agent_state, **args):
                 if len(chunk["messages"]) == 0:
@@ -258,7 +258,7 @@ class TradingAgentsGraph:
             # Standard mode without tracing
             with open(debug_file, "a", encoding='utf-8') as f:
                 f.write("Running in standard mode...\n")
-                
+
             final_state = self.graph.invoke(init_agent_state, **args)
             with open(debug_file, "a", encoding='utf-8') as f:
                 f.write("Graph execution completed\n")
@@ -286,7 +286,7 @@ class TradingAgentsGraph:
         result = final_state, self.process_signal(final_state["final_trade_decision"])
         with open(debug_file, "a", encoding='utf-8') as f:
             f.write("Propagate method completed\n")
-            
+
         return result
 
     def _log_state(self, trade_date, final_state):
@@ -322,6 +322,7 @@ class TradingAgentsGraph:
         }
 
         # Save to file
+        self.ticker = final_state["company_of_interest"]
         log_dir = os.path.join(self.config["project_dir"], "eval_results", self.ticker, "TradingAgentsStrategy_logs")
         os.makedirs(log_dir, exist_ok=True)
 
@@ -393,7 +394,7 @@ class TradingAgentsGraph:
         """Generate a web-based report from the trading state."""
         # 使用绝对路径创建调试文件
         debug_file = os.path.join(self.config["project_dir"], 'report_debug.txt')
-        
+
         # 直接写入文件来跟踪执行
         with open(debug_file, "a", encoding='utf-8') as f:
             f.write("\n=== Starting _generate_web_report ===\n")
@@ -404,37 +405,37 @@ class TradingAgentsGraph:
                 f.write("State keys: " + ", ".join(state.keys()) + "\n")
             else:
                 f.write("State is None or empty\n")
-        
+
         try:
             if not state:
                 with open(debug_file, "a", encoding='utf-8') as f:
                     f.write("Early return: state is empty\n")
                 return
-                
+
             # Create reports directory
             reports_dir = os.path.join(self.config["project_dir"], "reports")
             with open(debug_file, "a", encoding='utf-8') as f:
                 f.write(f"Reports directory path: {reports_dir}\n")
-            
+
             os.makedirs(reports_dir, exist_ok=True)
-            
+
             # Generate markdown report
             md_content = self._generate_markdown_report(trade_date, state)
             md_file = os.path.join(
-                reports_dir, 
+                reports_dir,
                 f"report_{state.get('company_of_interest', 'unknown')}_{trade_date}.md"
             )
             with open(md_file, "w", encoding="utf-8") as f:
                 f.write(md_content)
-            
+
             # Load HTML template
             template_dir = os.path.join(self.config["project_dir"], "templates")
             with open(debug_file, "a", encoding='utf-8') as f:
                 f.write(f"Template directory path: {template_dir}\n")
-            
+
             template_loader = jinja2.FileSystemLoader(searchpath=template_dir)
             template_env = jinja2.Environment(loader=template_loader)
-            
+
             try:
                 template = template_env.get_template("report_template.html")
                 with open(debug_file, "a", encoding='utf-8') as f:
@@ -443,12 +444,12 @@ class TradingAgentsGraph:
                 with open(debug_file, "a", encoding='utf-8') as f:
                     f.write(f"Failed to load template: {str(e)}\n")
                 raise
-            
+
             # Prepare report data
             market_type = get_market_type()
             with open(debug_file, "a", encoding='utf-8') as f:
                 f.write(f"Market type: {market_type}\n")
-            
+
             # Check required fields
             required_fields = [
                 "company_of_interest",
@@ -462,24 +463,24 @@ class TradingAgentsGraph:
                 "investment_plan",
                 "final_trade_decision"
             ]
-            
+
             missing_fields = [field for field in required_fields if field not in state]
             with open(debug_file, "a", encoding='utf-8') as f:
                 if missing_fields:
                     f.write(f"Missing fields: {', '.join(missing_fields)}\n")
                 else:
                     f.write("All required fields present\n")
-            
+
             # 准备投资辩论状态
             investment_debate_state = state.get("investment_debate_state", {})
             if not isinstance(investment_debate_state, dict):
                 investment_debate_state = {}
-            
+
             # 准备风险辩论状态
             risk_debate_state = state.get("risk_debate_state", {})
             if not isinstance(risk_debate_state, dict):
                 risk_debate_state = {}
-            
+
             report_data = {
                 "trade_date": trade_date,
                 "company": state.get("company_of_interest", "Unknown Company"),
@@ -510,10 +511,10 @@ class TradingAgentsGraph:
                 "final_decision": state.get("final_trade_decision", "最终决策未生成"),
                 "markdown_content": md_content  # 添加Markdown内容用于导出
             }
-            
+
             with open(debug_file, "a", encoding='utf-8') as f:
                 f.write(f"Prepared report data for company: {report_data['company']}\n")
-            
+
             # Generate HTML
             try:
                 html_output = template.render(**report_data)
@@ -523,20 +524,20 @@ class TradingAgentsGraph:
                 with open(debug_file, "a", encoding='utf-8') as f:
                     f.write(f"Failed to render template: {str(e)}\n")
                 raise
-            
+
             # Save report
             report_file = os.path.join(
-                reports_dir, 
+                reports_dir,
                 f"report_{state.get('company_of_interest', 'unknown')}_{trade_date}.html"
             )
             with open(debug_file, "a", encoding='utf-8') as f:
                 f.write(f"Saving report to: {report_file}\n")
-            
+
             with open(report_file, "w", encoding="utf-8") as f:
                 f.write(html_output)
             with open(debug_file, "a", encoding='utf-8') as f:
                 f.write("Successfully saved report file\n")
-            
+
             # Open in browser if not in debug mode
             if not self.debug:
                 with open(debug_file, "a", encoding='utf-8') as f:
@@ -551,7 +552,7 @@ class TradingAgentsGraph:
             else:
                 with open(debug_file, "a", encoding='utf-8') as f:
                     f.write("Debug mode enabled, skipping browser opening\n")
-                
+
         except Exception as e:
             with open(debug_file, "a", encoding='utf-8') as f:
                 f.write(f"Error in report generation: {str(e)}\n")

@@ -31,8 +31,7 @@ def get_akshare_stock_data(
     end_date: Annotated[str, "结束日期，格式为 yyyy-mm-dd"],
 ) -> pd.DataFrame:
     """获取 A 股市场股票数据"""
-    utils = AKShareUtils()
-    return utils.get_stock_data(symbol, start_date, end_date)
+    return AKShareUtils.get_stock_data(symbol, start_date, end_date)
 
 def get_akshare_balance_sheet(
     symbol: Annotated[str, "股票代码"],
@@ -44,7 +43,7 @@ def get_akshare_balance_sheet(
     balance_sheet = utils.get_balance_sheet(symbol, freq, curr_date)
     if balance_sheet.empty:
         return "No balance sheet data available for the specified date."
-    
+
     with pd.option_context('display.max_rows', None, 'display.max_columns', None):
         return f"## Balance Sheet for {symbol} as of {curr_date}:\n\n{balance_sheet.to_string()}"
 
@@ -58,7 +57,7 @@ def get_akshare_cash_flow(
     cash_flow = utils.get_cash_flow(symbol, freq, curr_date)
     if cash_flow.empty:
         return "No cash flow statement data available for the specified date."
-    
+
     with pd.option_context('display.max_rows', None, 'display.max_columns', None):
         return f"## Cash Flow Statement for {symbol} as of {curr_date}:\n\n{cash_flow.to_string()}"
 
@@ -72,7 +71,7 @@ def get_akshare_income_statement(
     income_stmt = utils.get_income_statement(symbol, freq, curr_date)
     if income_stmt.empty:
         return "No income statement data available for the specified date."
-    
+
     with pd.option_context('display.max_rows', None, 'display.max_columns', None):
         return f"## Income Statement for {symbol} as of {curr_date}:\n\n{income_stmt.to_string()}"
 
@@ -81,7 +80,7 @@ def get_akshare_finance_analysis(
     curr_date: Annotated[str, "当前日期，格式为 yyyy-mm-dd"],
 ) -> str:
     """获取 A 股市场财务分析数据，包括主要财务指标、杜邦分析等
-    
+
     返回的数据包括：
     1. 盈利能力分析：每股收益、ROE、ROA等
     2. 运营效率分析：毛利率、营业利润率等
@@ -102,7 +101,7 @@ def get_xueqiu_stock_info(
     discussions = AKShareNewsUtils.get_xueqiu_discussions(symbol)
     # followers = AKShareNewsUtils.get_xueqiu_followers(symbol)  # 假设有这个方法
     # sentiment = AKShareNewsUtils.get_xueqiu_sentiment(symbol)  # 假设有这个方法
-    
+
     return AKShareNewsUtils.format_social_report(
         discussions=discussions
         # followers=followers,
@@ -138,11 +137,11 @@ def get_akshare_special_data(
     block_trades = AKShareSpecialUtils.get_block_trades(symbol, start_date, end_date)
     margin_trading = AKShareSpecialUtils.get_margin_trading(symbol, start_date, end_date)
     north_flow = AKShareSpecialUtils.get_north_south_flow(symbol, start_date, end_date)
-    
+
     industry_analysis = ""
     if industry:
         industry_analysis = AKShareSpecialUtils.get_industry_analysis(industry, end_date)
-    
+
     return AKShareSpecialUtils.format_special_report(
         dragon_tiger=dragon_tiger,
         block_trades=block_trades,
@@ -950,25 +949,25 @@ def get_special_data(
     获取 A 股特有数据，包括龙虎榜、大宗交易、融资融券、北向资金等
     """
     market_type = get_market_type()
-    
+
     if market_type != "CN":
         return "仅支持 A 股市场"
 
     start_date = datetime.strptime(curr_date, "%Y-%m-%d")
     before = start_date - relativedelta(days=look_back_days)
     before = before.strftime("%Y-%m-%d")
-    
+
     # 获取各类特殊数据
     dragon_tiger = AKShareSpecialUtils.get_dragon_tiger_list(ticker, before, curr_date)
     block_trades = AKShareSpecialUtils.get_block_trades(ticker, before, curr_date)
     margin_trading = AKShareSpecialUtils.get_margin_trading(ticker, before, curr_date)
     north_flow = AKShareSpecialUtils.get_north_south_flow(ticker, before, curr_date)
-    
+
     # 如果提供了行业名称，获取行业分析数据
     industry_analysis = ""
     if industry:
         industry_analysis = AKShareSpecialUtils.get_industry_analysis(industry, curr_date)
-    
+
     return AKShareSpecialUtils.format_special_report(
         dragon_tiger=dragon_tiger,
         block_trades=block_trades,

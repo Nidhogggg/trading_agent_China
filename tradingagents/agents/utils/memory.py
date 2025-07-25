@@ -8,32 +8,32 @@ class FinancialSituationMemory:
     def __init__(self, name):
         self.client = OpenAI(base_url="https://ark.cn-beijing.volces.com/api/v3/", api_key=os.getenv("VOLCES_API_KEY"))
         self.chroma_client = chromadb.Client(Settings(allow_reset=True))
-        
+
         # Delete collection if it exists
         try:
             self.chroma_client.delete_collection(name=name)
         except:
             pass
-            
+
         # Create new collection
         self.situation_collection = self.chroma_client.create_collection(name=name)
 
     def get_embedding(self, text):
         """Get OpenAI embedding for a text
-        
+
         Args:
             text (str): Input text to get embedding for
-            
+
         Returns:
             list: The combined embedding vector
-            
+
         Note:
             The model has a max token limit of 4096, so we split long texts into chunks,
             get embeddings for each chunk, and then combine them by taking the average.
         """
         # 设置安全的字符长度限制（约3000个token）
         CHUNK_SIZE = 5000
-        
+
         def split_text(text, chunk_size):
             """将文本分成固定大小的块，尽量在句子边界分割"""
             # 首先按句子分割
@@ -41,7 +41,7 @@ class FinancialSituationMemory:
             chunks = []
             current_chunk = []
             current_size = 0
-            
+
             for sentence in sentences:
                 # 如果单个句子就超过了chunk_size，则按字符强制分割
                 if len(sentence) > chunk_size:
@@ -49,7 +49,7 @@ class FinancialSituationMemory:
                         chunks.append(sentence[:chunk_size])
                         sentence = sentence[chunk_size:]
                     continue
-                
+
                 # 检查添加这个句子是否会超过chunk_size
                 if current_size + len(sentence) + 2 <= chunk_size:  # +2 for '. '
                     current_chunk.append(sentence)
@@ -60,52 +60,52 @@ class FinancialSituationMemory:
                         chunks.append('. '.join(current_chunk) + '.')
                     current_chunk = [sentence]
                     current_size = len(sentence) + 2
-            
+
             # 添加最后一个chunk
             if current_chunk:
                 chunks.append('. '.join(current_chunk) + '.')
-            
+
             return chunks
-        
+
         try:
             # 如果文本长度在限制之内，直接处理
             if len(text) <= CHUNK_SIZE:
                 response = self.client.embeddings.create(
-                    model="doubao-embedding-text-240715", 
+                    model="doubao-embedding-text-240715",
                     input=text
                 )
                 return response.data[0].embedding
-            
+
             # 如果文本太长，分块处理
             print(f"Text length ({len(text)}) exceeds chunk size ({CHUNK_SIZE}). Processing in chunks...")
             chunks = split_text(text, CHUNK_SIZE)
             print(f"Split into {len(chunks)} chunks")
-            
+
             # 获取每个块的embedding
             embeddings = []
             for i, chunk in enumerate(chunks):
                 print(f"Processing chunk {i+1}/{len(chunks)} (length: {len(chunk)})")
                 try:
                     response = self.client.embeddings.create(
-                        model="doubao-embedding-text-240715", 
+                        model="doubao-embedding-text-240715",
                         input=chunk
                     )
                     embeddings.append(response.data[0].embedding)
                 except Exception as e:
                     print(f"Error processing chunk {i+1}: {str(e)}")
                     continue
-            
+
             if not embeddings:
                 raise Exception("Failed to get any valid embeddings")
-            
+
             # 将所有embedding向量取平均
             combined_embedding = np.mean(embeddings, axis=0)
             # 确保结果的范数与单个embedding相似
             combined_embedding = combined_embedding / np.linalg.norm(combined_embedding)
-            
+
             print(f"Successfully combined {len(embeddings)} embeddings")
             return combined_embedding.tolist()
-            
+
         except Exception as e:
             print(f"Error in get_embedding: {str(e)}")
             raise
@@ -161,7 +161,7 @@ if __name__ == "__main__":
     matcher = FinancialSituationMemory('financial_situation_memory')
 
     print("\n=== 测试 get_embedding 函数 ===")
-    
+
     # Test 1: Short text (within chunk size)
     short_text = "测试使用中文文本生成向量嵌入。这是一个简单的金融市场分析示例。"
     print("\n测试1: 短文本嵌入")
@@ -198,7 +198,7 @@ if __name__ == "__main__":
     发展环境持续优化，营商环境不断改善。资本市场基础制度建设稳步推进，注册制改革成效显
     著。市场生态持续优化，投资者结构更趋合理。
     """ * 3  # 重复文本以确保超过chunk size
-    
+
     print("\n测试2: 长文本嵌入（需要分块处理）")
     try:
         embedding = matcher.get_embedding(long_text)
@@ -209,7 +209,7 @@ if __name__ == "__main__":
         print(f"测试长文本时出错: {str(e)}")
 
     print("\n=== 测试记忆功能 ===")
-    
+
     # Example data with Chinese text
     example_data = [
         (
