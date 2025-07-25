@@ -996,14 +996,14 @@ def run_analysis():
 
         # Store current state for report generation
         graph.curr_state = final_state
-        
+
         # Generate HTML report using the final state directly
         graph._log_state(selections["analysis_date"], final_state)
         graph._generate_web_report(selections["analysis_date"], final_state)
 
         # Display the complete final report
         display_complete_report(final_state)
-        
+
         update_display(layout)
 
         return decision

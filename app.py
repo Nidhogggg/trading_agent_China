@@ -49,7 +49,7 @@ def load_reports():
     reports_dir = Path("reports")
     if not reports_dir.exists():
         return []
-    
+
     reports = []
     for file in reports_dir.glob("*"):
         if file.suffix in ['.html', '.md']:
@@ -63,13 +63,13 @@ def load_reports():
                     'path': str(file),
                     'type': file.suffix[1:]  # Remove the dot
                 })
-    
+
     return sorted(reports, key=lambda x: (x['ticker'], x['date']), reverse=True)
 
 def force_close_chroma():
     """Force close all ChromaDB connections"""
     current_process = psutil.Process()
-    
+
     # Get all open files for the current process and its children
     for proc in current_process.children(recursive=True):
         try:
@@ -87,10 +87,10 @@ def cleanup_memory():
     """Clean up ChromaDB collections before running new analysis"""
     # First, force close any existing ChromaDB connections
     force_close_chroma()
-    
+
     # Wait a moment for processes to close
     time.sleep(1)
-    
+
     # Clean up chroma_db directory
     try:
         chroma_path = Path("./chroma_db")
@@ -102,10 +102,10 @@ def cleanup_memory():
                 shutil.rmtree(chroma_path)
     except Exception as e:
         st.warning(f"Warning: Could not remove chroma_db directory: {str(e)}")
-    
+
     # Wait for filesystem to sync
     time.sleep(1)
-    
+
     # Create fresh directory
     os.makedirs("./chroma_db", exist_ok=True)
 
@@ -114,7 +114,7 @@ def get_trading_graph(analysts, config):
     """Create and cache TradingGraph instance"""
     return TradingAgentsGraph(analysts, config=config, debug=True)
 
-def run_analysis(ticker, analysis_date, selected_analysts, research_depth, 
+def run_analysis(ticker, analysis_date, selected_analysts, research_depth,
                 shallow_thinker, deep_thinker):
     """Run the trading agents analysis"""
     try:
@@ -123,7 +123,7 @@ def run_analysis(ticker, analysis_date, selected_analysts, research_depth,
         status_container = st.empty()
         message_container = st.empty()
         report_container = st.empty()
-        
+
         # Create a container for agent status
         agent_status = {
             # Analyst Team
@@ -143,7 +143,7 @@ def run_analysis(ticker, analysis_date, selected_analysts, research_depth,
             "Safe Analyst": "pending",
             "Portfolio Manager": "pending"
         }
-        
+
         def update_agent_status():
             # Create status table
             status_df = pd.DataFrame([
@@ -160,7 +160,7 @@ def run_analysis(ticker, analysis_date, selected_analysts, research_depth,
                 {"Team": "Risk Team", "Agent": "Safe Analyst", "Status": agent_status["Safe Analyst"]},
                 {"Team": "Risk Team", "Agent": "Portfolio Manager", "Status": agent_status["Portfolio Manager"]}
             ])
-            
+
             # Apply color coding
             def color_status(val):
                 if val == "completed":
@@ -168,7 +168,7 @@ def run_analysis(ticker, analysis_date, selected_analysts, research_depth,
                 elif val == "in_progress":
                     return 'background-color: #FFB6C1'  # Light pink
                 return 'background-color: #F0F0F0'  # Light gray for pending
-            
+
             # Display styled table
             with status_container:
                 st.dataframe(
@@ -203,7 +203,7 @@ def run_analysis(ticker, analysis_date, selected_analysts, research_depth,
 
         # Initialize the graph using cached function
         graph = get_trading_graph(
-            [analyst.value for analyst in selected_analysts], 
+            [analyst.value for analyst in selected_analysts],
             config
         )
 
@@ -314,15 +314,15 @@ def run_analysis(ticker, analysis_date, selected_analysts, research_depth,
             # Store current state for reflection and report generation
             graph.curr_state = final_state
             graph.ticker = ticker
-            
+
             # Log state
             graph._log_state(analysis_date, final_state)
-            
+
             # Generate web report without re-running analysis
             graph._generate_web_report(analysis_date, final_state)
 
             decision = graph.process_signal(final_state["final_trade_decision"])
-            
+
             # Show completion
             with progress_container:
                 st.progress(100)
@@ -333,7 +333,7 @@ def run_analysis(ticker, analysis_date, selected_analysts, research_depth,
             cleanup_memory()
 
             return decision, final_state
-            
+
         except Exception as e:
             with message_container:
                 st.error(f"Analysis failed: {str(e)}")
@@ -355,11 +355,11 @@ def main():
 
     if page == "Configuration":
         st.header("Analysis Configuration")
-        
+
         with st.container():
             st.subheader("Basic Settings")
             col1, col2 = st.columns(2)
-            
+
             with col1:
                 ticker = st.text_input("Ticker Symbol", value="000001")
                 analysis_date = st.date_input(
@@ -381,9 +381,9 @@ def main():
         analysts = st.multiselect(
             "Select Analysts",
             options=[analyst.value for analyst in AnalystType],
-            default=[AnalystType.MARKET.value, 
-                     AnalystType.FUNDAMENTALS.value, 
-                     AnalystType.NEWS.value, 
+            default=[AnalystType.MARKET.value,
+                     AnalystType.FUNDAMENTALS.value,
+                     AnalystType.NEWS.value,
                      AnalystType.SOCIAL.value],
             help="Choose the analysts to include in the analysis"
         )
@@ -409,10 +409,10 @@ def main():
                 return
 
             selected_analysts = [
-                analyst for analyst in AnalystType 
+                analyst for analyst in AnalystType
                 if analyst.value in analysts
             ]
-            
+
             decision, final_state = run_analysis(
                 ticker,
                 analysis_date.strftime("%Y-%m-%d"),
@@ -428,17 +428,17 @@ def main():
 
     else:  # Reports page
         st.header("Analysis Reports")
-        
+
         # Load and display reports
         reports = load_reports()
-        
+
         if not reports:
             st.info("No reports found in the reports directory.")
             return
 
         # Create a DataFrame for better display
         df = pd.DataFrame(reports)
-        
+
         # Add filters
         col1, col2 = st.columns(2)
         with col1:
@@ -475,7 +475,7 @@ def main():
                 else:  # Markdown
                     with open(report['path'], 'r', encoding='utf-8') as f:
                         st.markdown(f.read())
-                
+
                 # Download buttons
                 col1, col2 = st.columns(2)
                 with col1:
@@ -486,7 +486,7 @@ def main():
                             file_name=os.path.basename(report['path']),
                             mime=f"text/{report['type']}"
                         )
-                
+
                 # If HTML exists, also show MD download button
                 if report['type'] == 'html':
                     md_path = report['path'].replace('.html', '.md')
@@ -501,4 +501,4 @@ def main():
                                 )
 
 if __name__ == "__main__":
-    main() 
+    main()

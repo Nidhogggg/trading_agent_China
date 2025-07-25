@@ -27,8 +27,8 @@ DEFAULT_CONFIG = {
     # LLM settings
     # "deep_think_llm": "o4-mini",
     # "quick_think_llm": "gpt-4o-mini",
-    "deep_think_llm": "deepseek-r1",
-    "quick_think_llm": "deepseek-chat",
+    "deep_think_llm": "qwen-plus",
+    "quick_think_llm": "qwen-plus",
     # Debate and discussion settings
     "max_debate_rounds": 1,
     "max_risk_discuss_rounds": 1,
