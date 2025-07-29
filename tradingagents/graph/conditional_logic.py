@@ -50,21 +50,21 @@ class ConditionalLogic:
             return "Bull Researcher"
 
         debate_state = state["investment_debate_state"]
-        
+
         # 检查必要字段
         if not isinstance(debate_state, dict):
             return "Bull Researcher"
-            
+
         if not debate_state.get("count"):
             debate_state["count"] = 0
-            
+
         if not debate_state.get("current_response"):
             return "Bull Researcher"
 
         # 检查辩论轮次
         if debate_state["count"] >= 2 * self.max_debate_rounds:
             return "Research Manager"
-            
+
         # 检查当前发言者并决定下一个发言者
         current_response = debate_state["current_response"]
         if current_response.startswith("Bull") or current_response.startswith("多方"):

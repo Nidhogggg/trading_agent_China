@@ -96,6 +96,8 @@ pip install -r requirements.txt
 ```bash
 # 使用 Qwen API
 export QWEN_API_KEY=$YOUR_QWEN_API_KEY
+# 或者使用 Doubao API
+export DOUBAO_API_KEY=$YOUR_DOUBAO_API_KEY
 ```
 
 ```bash

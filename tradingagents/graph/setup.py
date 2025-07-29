@@ -41,7 +41,7 @@ class GraphSetup:
         self.conditional_logic = conditional_logic
 
     def setup_graph(
-        self, selected_analysts=["market", "social", "news", "fundamentals"]
+        self, selected_analysts=["market", "social", "news", "fundamentals"], is_recommend=False
     ):
         """Set up and compile the agent workflow graph.
 
@@ -59,6 +59,8 @@ class GraphSetup:
         analyst_nodes = {}
         delete_nodes = {}
         tool_nodes = {}
+
+        recommend_node = create_recommender(self.quick_thinking_llm)
 
         if "market" in selected_analysts:
             analyst_nodes["market"] = create_market_analyst(
@@ -120,6 +122,7 @@ class GraphSetup:
             workflow.add_node(f"tools_{analyst_type}", tool_nodes[analyst_type])
 
         # Add other nodes
+        workflow.add_node("Recommender", recommend_node)
         workflow.add_node("Bull Researcher", bull_researcher_node)
         workflow.add_node("Bear Researcher", bear_researcher_node)
         workflow.add_node("Research Manager", research_manager_node)
@@ -131,8 +134,15 @@ class GraphSetup:
 
         # Define edges
         # Start with the first analyst
+
         first_analyst = selected_analysts[0]
-        workflow.add_edge(START, f"{first_analyst.capitalize()} Analyst")
+
+        if is_recommend :
+            workflow.add_edge(START, "Recommender")
+            current_analyst = f"{first_analyst.capitalize()} Analyst"
+            workflow.add_edge("Recommender",current_analyst)
+        else:
+            workflow.add_edge(START, f"{first_analyst.capitalize()} Analyst")
 
         # Connect analysts in sequence
         for i, analyst_type in enumerate(selected_analysts):

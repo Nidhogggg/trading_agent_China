@@ -62,8 +62,8 @@ class TradingAgentsGraph:
         )
 
         # 配置 Deepseek API 基础 URL 和 API Key
-        base_url = self.config.get("deepseek_base_url", "https://dashscope.aliyuncs.com/compatible-mode/v1")
-        api_key = self.config.get("deepseek_api_key", os.getenv("QWEN_API_KEY"))
+        base_url = self.config.get("deepseek_base_url", "https://ark.cn-beijing.volces.com/api/v3")
+        api_key = self.config.get("deepseek_api_key", os.getenv("DOUBAO_API_KEY"))
 
         # Initialize LLMs with Deepseek configuration
         self.deep_thinking_llm = ChatOpenAI(
@@ -114,7 +114,7 @@ class TradingAgentsGraph:
         self.log_states_dict = {}  # date to full state dict
 
         # Set up the graph
-        self.graph = self.graph_setup.setup_graph(selected_analysts)
+        self.graph = self.graph_setup.setup_graph(selected_analysts, self.config["is_recommend"])
 
     def _create_tool_nodes(self) -> Dict[str, ToolNode]:
         """Create tool nodes for different data sources."""

@@ -2,6 +2,8 @@ from .utils.agent_utils import Toolkit, create_msg_delete
 from .utils.agent_states import AgentState, InvestDebateState, RiskDebateState
 from .utils.memory import FinancialSituationMemory
 
+from .recommender.recommend import create_recommender
+
 from .analysts.fundamentals_analyst import create_fundamentals_analyst
 from .analysts.market_analyst import create_market_analyst
 from .analysts.news_analyst import create_news_analyst
@@ -26,6 +28,7 @@ __all__ = [
     "create_msg_delete",
     "InvestDebateState",
     "RiskDebateState",
+    "create_recommender",
     "create_bear_researcher",
     "create_bull_researcher",
     "create_research_manager",

@@ -8,6 +8,7 @@ DEFAULT_CONFIG = {
     "report_dir": PROJECT_ROOT,
     "data_dir": os.path.join(PROJECT_ROOT, "FR1-data"),
     "data_cache_dir": os.path.join(PROJECT_ROOT, "tradingagents/dataflows/data_cache"),
+    "is_recommend": False,
     # Market settings
     "market_type": "CN",  # 'US' or 'CN'
     "market_hours": {

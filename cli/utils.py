@@ -127,6 +127,7 @@ def select_shallow_thinking_agent() -> str:
 
     # Define shallow thinking llm engine options with their corresponding model names
     SHALLOW_AGENT_OPTIONS = [
+        ("Doubao - 专业推理模型（紧凑版）", "doubao-seed-1-6-thinking-250715"),
         ("Qwen3 - 专业推理模型（紧凑版）", "qwen-plus"),
         ("DeepSeek-V3 - 专业推理模型（紧凑版）", "deepseek-chat"),
         ("DeepSeek-R1 - 完整版高级推理模型", "deepseek-reasoner"),
@@ -166,6 +167,7 @@ def select_deep_thinking_agent() -> str:
 
     # Define deep thinking llm engine options with their corresponding model names
     DEEP_AGENT_OPTIONS = [
+        ("Doubao - 专业推理模型（紧凑版）", "doubao-seed-1-6-thinking-250715"),
         ("Qwen3 - 专业推理模型（紧凑版）", "qwen-plus"),
         ("DeepSeek-V3 - 专业推理模型（紧凑版）", "deepseek-chat"),
         ("DeepSeek-R1 - 完整版高级推理模型", "deepseek-reasoner"),

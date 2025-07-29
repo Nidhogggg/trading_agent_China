@@ -40,6 +40,8 @@ class MessageBuffer:
         self.current_report = None
         self.final_report = None  # Store the complete final report
         self.agent_status = {
+            #Recommend Team
+            "Recommender": "pending",
             # Analyst Team
             "Market Analyst": "pending",
             "Social Analyst": "pending",
@@ -60,6 +62,7 @@ class MessageBuffer:
         }
         self.current_agent = None
         self.report_sections = {
+            "recommender" : None,
             "market_report": None,
             "sentiment_report": None,
             "news_report": None,
@@ -101,6 +104,7 @@ class MessageBuffer:
         if latest_section and latest_content:
             # Format the current section for display
             section_titles = {
+                "recommender" : "Stock Recommender",
                 "market_report": "Market Analysis",
                 "sentiment_report": "Social Sentiment",
                 "news_report": "News Analysis",
@@ -119,6 +123,10 @@ class MessageBuffer:
     def _update_final_report(self):
         report_parts = []
 
+        #Recommender Team
+        if self.report_sections["recommender"]:
+            report_parts.append("## Recommender")
+            report_parts.append(f"{self.report_sections['recommender']}")
         # Analyst Team Reports
         if any(
             self.report_sections[section]
@@ -213,6 +221,7 @@ def update_display(layout, spinner_text=None):
 
     # Group agents by team
     teams = {
+        "Recommender Team": ["Recommender"],
         "Analyst Team": [
             "Market Analyst",
             "Social Analyst",
@@ -491,6 +500,26 @@ def display_complete_report(final_state):
     """Display the complete analysis report with team-based panels."""
     console.print("\n[bold green]Complete Analysis Report[/bold green]\n")
 
+    recommender_reports = []
+    if final_state.get("recommender"):
+        recommender_reports.append(
+            Panel(
+                Markdown(final_state["recommender"]),
+                title="Recommender",
+                border_style="blue",
+                padding=(1, 2),
+            )
+        )
+    if recommender_reports:
+        console.print(
+            Panel(
+                Columns(recommender_reports, equal=True, expand=True),
+                title="0. Recommender Team Reports",
+                border_style="cyan",
+                padding=(1, 2),
+            )
+        )
+
     # I. Analyst Team Reports
     analyst_reports = []
 
@@ -694,7 +723,11 @@ def run_analysis():
     config["max_risk_discuss_rounds"] = selections["research_depth"]
     config["quick_think_llm"] = selections["shallow_thinker"]
     config["deep_think_llm"] = selections["deep_thinker"]
-
+    flag_recommend = False
+    if selections["ticker"] == "SPY":
+        flag_recommend = True
+        selections["ticker"] = ""
+    config["is_recommend"] = flag_recommend
     # Initialize the graph
     graph = TradingAgentsGraph(
         [analyst.value for analyst in selections["analysts"]], config=config, debug=True
@@ -729,8 +762,12 @@ def run_analysis():
         message_buffer.final_report = None
 
         # Update agent status to in_progress for the first analyst
-        first_analyst = f"{selections['analysts'][0].value.capitalize()} Analyst"
-        message_buffer.update_agent_status(first_analyst, "in_progress")
+        if flag_recommend:
+            message_buffer.update_agent_status("Recommender", "in_progress")
+        else:
+            message_buffer.update_agent_status("Recommender", "pending")
+            first_analyst = f"{selections['analysts'][0].value.capitalize()} Analyst"
+            message_buffer.update_agent_status(first_analyst, "in_progress")
         update_display(layout)
 
         # Create spinner text
@@ -749,6 +786,8 @@ def run_analysis():
         trace = []
         for chunk in graph.graph.stream(init_agent_state, **args):
             if len(chunk["messages"]) > 0:
+                print("DEBUG::chunk")
+                print(chunk)
                 # Get the last message from the chunk
                 last_message = chunk["messages"][-1]
 
@@ -775,8 +814,21 @@ def run_analysis():
                             message_buffer.add_tool_call(tool_call.name, tool_call.args)
 
                 # Update reports and agent status based on chunk content
+                if "recommender" in chunk and chunk["recommender"]:
+                    print("DEBUG::recommender")
+                    print(chunk["recommender"])
+                    message_buffer.update_report_section(
+                        "recommender", chunk["recommender"]
+                    )
+                    message_buffer.update_agent_status("Recommender", "completed")
+                    if "market_report" in selections["analysts"]:
+                        message_buffer.update_agent_status(
+                            "Market Analyst", "in_progress"
+                        )
                 # Analyst Team Reports
                 if "market_report" in chunk and chunk["market_report"]:
+                    print("DEBUG::market_report")
+                    print(chunk["market_report"])
                     message_buffer.update_report_section(
                         "market_report", chunk["market_report"]
                     )
