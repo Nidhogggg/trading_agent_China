@@ -48,6 +48,7 @@ class Propagator:
                     "count": 0
                 }
             ),
+            "recommender": "",
             "market_report": "",
             "fundamentals_report": "",
             "sentiment_report": "",

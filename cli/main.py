@@ -786,8 +786,6 @@ def run_analysis():
         trace = []
         for chunk in graph.graph.stream(init_agent_state, **args):
             if len(chunk["messages"]) > 0:
-                print("DEBUG::chunk")
-                print(chunk)
                 # Get the last message from the chunk
                 last_message = chunk["messages"][-1]
 
@@ -815,8 +813,6 @@ def run_analysis():
 
                 # Update reports and agent status based on chunk content
                 if "recommender" in chunk and chunk["recommender"]:
-                    print("DEBUG::recommender")
-                    print(chunk["recommender"])
                     message_buffer.update_report_section(
                         "recommender", chunk["recommender"]
                     )
@@ -827,8 +823,6 @@ def run_analysis():
                         )
                 # Analyst Team Reports
                 if "market_report" in chunk and chunk["market_report"]:
-                    print("DEBUG::market_report")
-                    print(chunk["market_report"])
                     message_buffer.update_report_section(
                         "market_report", chunk["market_report"]
                     )

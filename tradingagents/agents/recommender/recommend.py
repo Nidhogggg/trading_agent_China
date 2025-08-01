@@ -17,6 +17,7 @@ def create_recommender(llm):
                 "你需要针对A股市场进行推荐\n"
                 "股票要求低估值、业绩好、基本面好、技术面好，并且要求股价在10元以内。\n"
                 "你需要推荐一支最符合要求的股票，并给出他的股票代码：\n"
+                "请你最终输出输出推荐股票的股票代码，这样其他助手就可以继续分析这只股票。"
                 # "请你最终只输出推荐股票的股票代码。"
             )
         else:
@@ -72,7 +73,8 @@ def create_recommender(llm):
 
         return {
             "messages": [result],
-            "fundamentals_report": report,
+            "recommender": report,
+            "company_of_interest": report,
         }
 
     return recommender_node
